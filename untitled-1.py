@@ -1,19 +1,19 @@
 # School-ting
 
 
-from bottle import run, view, get, post, request
+from bottle import run, route, view, get, post, request
 from itertools import count
 
 class Ticket:
 
     _ids = count (0)
 
-    def _init_(self, name, email, dste_of_birth, check_in):
+    def __init__(self, name, email, date_of_birth, check_in):
         self.id = next(self._ids)
         self.name = name
         self_email = email
         self_dob = date_of_birth
-        self check_in = check_in
+        self_check_in = check_in
         
 tickets = [
     Ticket("Ethan Stace", "staceethan@gmail.com", "26/07/02", False),
