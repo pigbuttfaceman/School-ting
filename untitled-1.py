@@ -1,5 +1,9 @@
 # School-ting
-
+#ver 1.0
+#ver 1.2
+#ver 1.3
+#ver 1.4
+#ver 1.5
 
 from bottle import run, route, view, get, post, request
 from itertools import count
@@ -31,6 +35,12 @@ def index():
     pass
 
 
+#check in
+@route("/check-in")
+@view ("check-in")
+def check_in():
+    data = dict (ticket_list = tickets)
+    return data
 
 
 
