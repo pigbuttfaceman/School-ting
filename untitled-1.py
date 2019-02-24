@@ -15,15 +15,15 @@ class Ticket:
     def __init__(self, name, email, date_of_birth, check_in):
         self.id = next(self._ids)
         self.name = name
-        self_email = email
-        self_dob = date_of_birth
-        self_check_in = check_in
+        self.email = email
+        self.dob = date_of_birth
+        self.check_in = check_in
         
 tickets = [
     Ticket("Ethan Stace", "staceethan@gmail.com", "26/07/02", False),
     Ticket("Bob Ross", "bobross@gmail.com", "27/07/02", False),
     Ticket("Steve Ewrin", "STEVE@gmail.com", "25/01/89", False),
-    Ticket("Morgan Freeman", "sooth@gmail.com", "18/02/69", False)
+    Ticket("Bill Cosby", "freedrinks@gmail.com", "18/02/69", False)
     ]
 
 
