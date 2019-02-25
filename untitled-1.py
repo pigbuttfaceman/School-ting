@@ -21,9 +21,9 @@ class Ticket:
         
 tickets = [
     Ticket("Ethan Stace", "staceethan@gmail.com", "26/07/02", False),
-    Ticket("Bob Ross", "bobross@gmail.com", "27/07/02", False),
+    Ticket("Bob Ross", "bobross@gmail.com", "27/07/02", True),
     Ticket("Steve Ewrin", "STEVE@gmail.com", "25/01/89", False),
-    Ticket("Bill Cosby", "freedrinks@gmail.com", "18/02/69", False)
+    Ticket("Bill Cosby", "freedrinks@gmail.com", "18/02/69", True)
     ]
 
 
@@ -42,6 +42,18 @@ def check_in():
     data = dict (ticket_list = tickets)
     return data
 
+@route('/check-in-success/<ticket_id>')
+@view ('check-in-success')
+def check_in_success(ticket_id):
+    
+    ticket_id = int(ticket_id)
+    found_ticket = None
+    for ticket in tickets:
+        if ticket.id == ticket_id:
+            found_ticket = ticket
+    data = dict (ticket = found_ticket)
+    found_ticket.check_in = True
+    return data
 
 
 
