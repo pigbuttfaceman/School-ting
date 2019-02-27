@@ -55,8 +55,10 @@ def check_in_success(ticket_id):
     found_ticket.check_in = True
     return data
 
-
-
+@route('/sign-up')
+@view ('sign-up')
+def sign_up():
+    pass
 
 
 run(host='0.0.0.0', port=8080, reloader = True, debug = True)
