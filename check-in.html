@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	% include('shared/header.html')
+	% include('shared/nav_bar.html')
+
+	<body class = "yellow">
+  
+  
+		<div>
+	
+				% for ticket in ticket_list:
+				<div class="col s6 row center red container">
+					<h2 class="header blue-text ">{{ticket.name}}</h2>
+					<div class="card horizontal ">
+						<div class="card-image z-depth-1">
+					
+						</div>
+					<div class="card-stacked">
+						<div class="card-content lime accent-3 black-text">
+						<h5>Email: {{ticket.email}}</h5>
+						<h5>D.O.B: {{ticket.dob}}</h5>
+						%if ticket.check_in == True:
+							<p> Checked In </p>
+						%else:
+							<p><a href = "/check-in-success/{{ticket.id}}"</a> Not Checked In </p>
+						%end
+						</div>
+					
+					</div>
+					</div>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				%end
+		</div>
+		
+	
+</html>
+
